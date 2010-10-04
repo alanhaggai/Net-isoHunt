@@ -26,6 +26,8 @@ is( $ih_response->description(), 'BitTorrent Search > All > ubuntu',
                                  'description: BitTorrent Search > All > ubuntu' );
 
 subtest 'image' => sub {
+    plan tests => 3;
+
     my $image = $ih_response->image();
     isa_ok( $image, 'Net::isoHunt::Response::Image' );
 
@@ -35,6 +37,8 @@ subtest 'image' => sub {
 };
 
 subtest 'item' => sub {
+    plan tests => 1;
+
     my @items = @{ $ih_response->items() };
     my $item  = shift @items;
     isa_ok( $item, 'Net::isoHunt::Response::Item' );
